@@ -1,9 +1,28 @@
-<!-- ============================================================== -->
-<!-- Container fluid  -->
-<!-- ============================================================== -->
-<div class="container-fluid">
-    
-    <?php $this->load->view('layouts/_alert') ?>
+
+<div class="">
+<?php $this->load->view('layouts/_alert') ?>
+<div class="lg:columns-4 md:columns-1 sm:columns-1 xs:1 gap-4">
+    <div class="relative bg-gray-600 pt-5 px-2 pb-4 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden mb-2 align-items-center">
+        <dt>
+            <div class="absolute bg-indigo-500 rounded-md p-3">
+                <!-- Heroicon name: outline/users -->
+                <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </div>
+            <p class="ml-16 text-sm font-medium text-gray-100 truncate">Jumlah Staff</p>
+        </dt>
+        <dd class="ml-16 pb-26 flex items-baseline sm:pb-2">
+            <p class="text-2xl font-semibold text-gray-50"><?=getJumlahStaff();?></p>
+            <p class="ml-2 flex items-baseline text-sm font-semibold text-gray-100">
+                <!-- Heroicon name: solid/arrow-sm-up -->
+                Orang
+            </p>
+        </dd>
+    </div>
+</div>
+
+
     <div class="row">
         <div class="col-md-12">
         <div class="card-group">
