@@ -138,8 +138,7 @@ class Inputs extends MY_Controller
 
         $this->inputs->table = 'barang_masuk_detail';
         $data['list_barang'] = $this->inputs->select([
-                'barang_masuk_detail.qty', 'barang_masuk_detail.subtotal',
-                'barang.id_satuan', 'barang.nama', 'barang.harga',
+                'barang_masuk_detail.qty', 'barang_masuk_detail.subtotal', 'barang.nama', 'barang.harga',
             ])
             ->join('barang')
             ->where('barang_masuk_detail.id_barang_masuk', $id_barang_masuk)

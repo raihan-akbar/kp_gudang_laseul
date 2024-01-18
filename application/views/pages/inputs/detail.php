@@ -48,7 +48,7 @@
                                     </td>
                                     <td class="text-center">
                                         Rp.<?= number_format($barang->harga, 0, ',', '.') ?>,- / 
-                                        <small><?= ucfirst(getUnitName($barang->id_satuan)) ?></small>
+
                                     </td>
                                     <td class="text-center"><?= $barang->qty ?></td>
                                     <td class="text-center">Rp.<?= number_format($barang->subtotal, 0, ',', '.') ?>,-</td>
