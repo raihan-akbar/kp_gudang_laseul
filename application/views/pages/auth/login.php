@@ -9,90 +9,62 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/logo-icon.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/images/Mark-Primary.svg') ?>">
     <title><?= $title ?></title>
     <!-- Custom CSS -->
-    <link href="<?= base_url('assets/css/style.min.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= base_url('assets/css/style.min.css') ?>" rel="stylesheet"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div class="preloader">
-            <div class="lds-ripple">
-                <div class="lds-pos"></div>
-                <div class="lds-pos"></div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            style="background:url(<?= base_url('assets/images/big/auth-bg.jpg') ?>) no-repeat center center;">
-            <div class="auth-box row">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(<?= base_url('assets/images/auth/login.jpg') ?>);">
-                </div>
-                <div class="col-lg-5 col-md-7 bg-white">
-                    <div class="p-3">
-                        <h2 class="mt-3 text-center">Login</h2>
-                        <p class="text-center">Masukan alamat email dan password untuk mengakses panel utama</p>
-						<br><center><p>Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a></p></center>
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <?php $this->load->view('layouts/_alert') ?>
-                            </div>
-                        </div>
-                        <form action="<?= base_url('login') ?>" class="mt-2" method="POST">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="text-dark" for="">Email</label>
-                                        <?= form_input(['type' => 'email', 'name' => 'email', 'value' => 'admin@easywms.com', 'class' => 'form-control', 'placeholder' => 'Masukan email anda', 'required' => true, 'autofocus' => true]) ?>
-                                        <?= form_error('email') ?>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="text-dark" for="">Password</label>
-                                        <?= form_password('password', '', ['class' => 'form-control','value' => 'admin@easywms.com', 'placeholder' => 'Masukkan password', 'required' => true]) ?>
-                                        <?= form_error('password') ?>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-block btn-dark">Login</button>
-                                </div>
-                                <div class="col-lg-12 text-center mt-5">
-                                    Lupa email/password? Silahkan hubungi administrator.
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
+<?php $this->load->view('layouts/_alert') ?>
+<div class="min-h-full flex items-center justify-center py-36 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <div>
+      <img class="mx-auto h-12 w-auto" src="<?=base_url('assets/images/Mark-Primary.svg') ?>" alt="Workflow">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign-in Page</h2>
+      <p class="mt-2 text-center text-sm text-gray-600">Please Log in to Continue</p>
     </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
-    <script src="<?= base_url('assets/libs/jquery/jquery.min.js') ?>"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="<?= base_url('assets/libs/popper.js/umd/popper.min.js') ?>"></script>
-    <script src="<?= base_url('assets/libs/bootstrap/js/bootstrap.min.js') ?>"></script>
-    <!-- ============================================================== -->
-    <!-- This page plugin js -->
-    <!-- ============================================================== -->
-    <script>
-        $(".preloader ").fadeOut();
-    </script>
+    <form class="mt-8 space-y-6" action="#" method="POST">
+      <input type="hidden" name="remember" value="true">
+      <div class="rounded-md shadow-sm -space-y-px">
+        <div>
+          <label for="email-address" class="sr-only">Email address</label>
+          <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+          <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember ID </label>
+        </div>
+
+        <div class="text-sm">
+          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Login Problem?</a>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            <!-- Heroicon name: solid/lock-closed -->
+            <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          Sign in
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 </body>
 
 </html>
