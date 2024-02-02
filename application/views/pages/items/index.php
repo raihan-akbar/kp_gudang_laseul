@@ -25,14 +25,12 @@
     </div>
 
     <!-- List Menu -->
-    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-    <div class="lg:columns-4 md:columns-1 sm:columns-1 xs:1 gap-4 mb-4">
-        <?php foreach ($content as $row) : ?>
-            <div class="col-lg-3">
-                <div class="card border-primary">
-                    
-                    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <!-- <div class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"> -->
+        
+        <div class="lg:columns-4 md:columns-2 sm:columns-1 gap-4 mb-4 w-full mb-4">
+            <?php foreach ($content as $row) : ?>
+                <div class="card border-primary w-full mb-4">
+                    <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $row->nama_barang ?></h3>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong>Rp.<?= number_format($row->harga, 0, ',', '.') ?>,-</strong></p>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Kuantitas barang: <?= $row->qty . ' pcs' ?></p>
@@ -66,9 +64,8 @@
                         </div>         
                     </div>
                 </div>
-            
-        <?php endforeach ?>
-    </div>
+            <?php endforeach ?>
+        </div>
 
     <div class="row d-flex justify-content-center">
         <nav aria-label="Page navigation example">
