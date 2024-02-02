@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Container fluid  -->
 <!-- ============================================================== -->
-<div class="container-fluid">
+<div class="container-fluid"> 
     
     <?php $this->load->view('layouts/_alert') ?>
     
@@ -10,21 +10,21 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">List Karyawan</h4>
+                        <h4 class="text-lg font-medium text-gray-900 dark:text-black">List Karyawan</h4>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table no-wrap v-middle mb-0">
-                            <thead>
-                                <tr class="border-0">
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Nama</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Email</th>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Nama</th>
+                                    <th scope="col" class="px-6 py-3">Email</th>
                                     <!-- Hanya admin yang boleh liat KTP -->
                                     <?php if ($this->session->userdata('role') == 'admin') : ?>
                                         <th class="border-0 font-14 font-weight-medium text-muted px-2">KTP</th>
                                     <?php endif ?>
-                                    <th class="border-0 font-14 font-weight-medium text-muted">Role</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">Status</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">Telefon</th>
+                                    <th scope="col" class="px-6 py-3">Role</th>
+                                    <th scope="col" class="px-6 py-3">Status</th>
+                                    <th scope="col" class="px-6 py-3">Telefon</th>
                                     <!-- Hanya admin yang boleh edit -->
                                     <?php if ($this->session->userdata('role') == 'admin') : ?>
                                         <th class="border-0 font-14 font-weight-medium text-muted text-center"></th>
@@ -33,7 +33,7 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($content as $row) : ?>
-                                    <tr>
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td class="border-top-0 px-2 py-4"><?= $row->nama ?></td>
                                         <td class="border-top-0 text-muted px-2 py-4 font-14"><?= $row->email ?></td>
                                         <!-- Hanya admin yang boleh liat KTP -->

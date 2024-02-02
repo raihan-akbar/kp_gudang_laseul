@@ -5,7 +5,7 @@
     <div class="row" id="printBukti">
         <div class="col-md-12">
             <div class="card mb-3">
-                <div class="card-header bg-primary text-white">
+                <div class="text-lg font-medium text-gray-900 dark:text-black">
                     Detail Pemasukan Barang
                 </div>
                 <div class="card-body">

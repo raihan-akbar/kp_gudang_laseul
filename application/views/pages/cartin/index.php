@@ -11,28 +11,27 @@
                 <div class="card-header bg-primary text-white">
                     Keranjang Penambahan Barang
                 </div>
-                <div class="card-body">
-                    <table class="table table-responsive w-100 d-block d-md-table">
-                        <thead>
+                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th>Barang</th>
-                                <th class="text-center">Harga</th>
-                                <th class="text-center">Jumlah</th>
-                                <th class="text-center">Subtotal</th>
+                                <th scope="col" class="px-6 py-3">Barang</th>
+                                <th scope="col" class="px-6 py-3">Harga</th>
+                                <th scope="col" class="px-6 py-3">Jumlah</th>
+                                <th scope="col" class="px-6 py-3">Subtotal</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($content as $row) : ?>
-                                <tr>
-                                    <td>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <td class="px-6 py-4">
                                         <strong><?= $row->nama ?></strong>
                                     </td>
-                                    <td class="text-center">
-                                        Rp.<?= number_format($row->harga, 0, ',', '.') ?>,- / 
-                                        <small><?= ucfirst(getUnitName($row->id_satuan)) ?></small>
+                                    <td class="px-6 py-4">
+                                        Rp.<?= number_format($row->harga, 0, ',', '.') ?>,- /pcs
                                     </td>
-                                    <td>
+                                    <td class="px-6 py-4">
                                         <form action="<?= base_url('cartin/update') ?>" method="POST">
                                             <input type="hidden" name="id" value="<?= $row->id ?>">
                                             <input type="hidden" name="id_barang" value="<?= $row->id_barang ?>">
@@ -45,8 +44,8 @@
                                             <small class="text-danger mt-1"><?= $this->session->flashdata("qty_cartin_$row->id") ?></small>
                                         </form>
                                     </td>
-                                    <td class="text-center">Rp.<?= number_format($row->subtotal, 0, ',', '.') ?>,-</td>
-                                    <td>
+                                    <td class="px-6 py-4">Rp.<?= number_format($row->subtotal, 0, ',', '.') ?>,-</td>
+                                    <td class="px-6 py-4">
                                         <form action="<?= base_url('cartin/delete') ?>" method="POST">
                                             <input type="hidden" name="id" value="<?= $row->id ?>">
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></button>
@@ -55,8 +54,8 @@
                                 </tr>
                             <?php endforeach ?>
                             <tr>
-                                <td colspan="3"><strong>Total:</strong></td>
-                                <td class="text-center"><strong>Rp.<?= number_format(array_sum(array_column($content, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
+                                <td class="px-6 py-4"><strong>Total:</strong></td>
+                                <td class="px-6 py-4"><strong>Rp.<?= number_format(array_sum(array_column($content, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
                                 <td></td>
                             </tr>
                         </tbody>

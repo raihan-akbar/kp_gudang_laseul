@@ -27,13 +27,12 @@ class Cartout extends MY_Controller
     {
         $this->session->unset_userdata('keyword');
 
-        $data['title']              = 'Easy WMS - Keranjang Keluar';
+        $data['title']              = 'La Seul Plus - Keranjang Keluar';
         $data['breadcrumb_title']   = "Keranjang Keluar";
         $data['breadcrumb_path']    = 'Barang Keluar / Keranjang Keluar';
         $data['page']               = 'pages/cartout/index';
         $data['content']            = $this->cartout->select([
-                'barang.id AS id_barang', 'barang.nama', 'barang.harga',
-                'barang.id_satuan', 'keranjang_keluar.id AS id', 
+                'barang.id AS id_barang', 'barang.nama', 'barang.harga', 'keranjang_keluar.id AS id', 
                 'keranjang_keluar.qty AS qty_barang_keluar'
             ])
             ->where('keranjang_keluar.id_user', $this->id_user)
@@ -257,8 +256,7 @@ class Cartout extends MY_Controller
 
             $this->cartout->table = 'barang_keluar_detail';
             $data['list_barang'] = $this->cartout->select([
-                    'barang_keluar_detail.qty',
-                    'barang.id_satuan', 'barang.nama',
+                    'barang_keluar_detail.qty', 'barang.nama',
                 ])
                 ->join('barang')
                 ->where('barang_keluar_detail.id_barang_keluar', $id_barang_keluar)

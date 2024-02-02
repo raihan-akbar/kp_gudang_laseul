@@ -25,7 +25,6 @@
                                 <tr>
                                     <td>
                                         <strong><?= $row->nama ?></strong> / 
-                                        <small><?= ucfirst(getUnitName($row->id_satuan)) ?></small>
                                     </td>
                                     <td>
                                         <form action="<?= base_url('cartout/update') ?>" method="POST">

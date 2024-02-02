@@ -1,7 +1,7 @@
 <!-- ============================================================== -->
 <!-- Container fluid  -->
 <!-- ============================================================== -->
-<div class="container-fluid">
+<div class="container-fluid"> 
     
     <?php $this->load->view('layouts/_alert') ?>
     
@@ -10,17 +10,17 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">List Supplier</h4>
+                        <h4 class="text-lg font-medium text-gray-900 dark:text-black">List Supplier</h4>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table no-wrap v-middle mb-0">
-                            <thead>
-                                <tr class="border-0">
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Nama</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Email</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Telefon</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted">Alamat</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted text-center">Status Supplier</th>
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Nama</th>
+                                    <th scope="col" class="px-6 py-3">Email</th>
+                                    <th scope="col" class="px-6 py-3">Telefon</th>
+                                    <th scope="col" class="px-6 py-3">Alamat</th>
+                                    <th scope="col" class="px-6 py-3">Status Supplier</th>
                                     <!-- Hanya admin yang boleh edit -->
                                     <?php if ($this->session->userdata('role') == 'admin') : ?>
                                         <th class="border-0 font-14 font-weight-medium text-muted text-center"></th>
@@ -29,12 +29,12 @@
                             </thead>
                             <tbody>
                                 <?php foreach ($content as $row) : ?>
-                                    <tr>
-                                        <td class="border-top-0 px-2 py-4"><?= $row->nama ?></td>
-                                        <td class="border-top-0 text-muted px-2 py-4 font-14"><?= $row->email ?></td>
-                                        <td class="border-top-0 text-muted px-2 py-4 font-14"><?= $row->telefon ?></td>
-                                        <td class="border-top-0 text-muted px-2 py-4 font-14"><?= $row->alamat ?></td>
-                                        <td class="border-top-0 text-center px-2 py-4">
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <td class="px-6 py-4"><?= $row->nama ?></td>
+                                        <td class="px-6 py-4"><?= $row->email ?></td>
+                                        <td class="px-6 py-4"><?= $row->telefon ?></td>
+                                        <td class="px-6 py-4"><?= $row->alamat ?></td>
+                                        <td class="px-6 py-4">
                                             <?php if ($row->status == 'aktif') : ?>
                                                 <i class="fa fa-circle text-success font-12" data-toggle="tooltip" data-placement="top" title="Aktif"></i>
                                             <?php else : ?>
@@ -63,7 +63,7 @@
                                 <a href="<?= base_url('suppliers') ?>" class="btn btn-primary btn-rounded text-white"><i class="fas fa-angle-left"></i> Daftar Supplier</a>
                             </div>
                             <div class="col-md-6 col-sm-12 mb-2 d-flex justify-content-center">
-                                <div class="row d-flex justify-content-center">
+                                <div class="flex">
                                     <nav aria-label="Page navigation example">
                                         <?= $pagination ?>
                                     </nav>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                 <?php else : ?>
-                    <div class="row d-flex justify-content-center">
+                    <div class="flex">
                         <nav aria-label="Page navigation example">
                             <?= $pagination ?>
                         </nav>

@@ -24,7 +24,7 @@ class Items extends MY_Controller
     {
         $this->session->unset_userdata('keyword');
 
-        $data['title']              = 'La Seul - List Barang';
+        $data['title']              = 'La Seul Plus - List Barang';
         $data['breadcrumb_title']   = "List Barang";
         $data['breadcrumb_path']    = 'Pendataan Barang / List Barang';
         $data['content']            = $this->items->select([

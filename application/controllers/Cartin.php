@@ -27,13 +27,12 @@ class Cartin extends MY_Controller
     {
         $this->session->unset_userdata('keyword');
 
-        $data['title']              = 'Easy WMS - Keranjang Masuk';
+        $data['title']              = 'La Seul Plus - Keranjang Masuk';
         $data['breadcrumb_title']   = "Keranjang Masuk";
         $data['breadcrumb_path']    = 'Barang Masuk / Keranjang Masuk';
         $data['page']               = 'pages/cartin/index';
         $data['content']            = $this->cartin->select([
-                'barang.id AS id_barang', 'barang.nama', 'barang.harga',
-                'barang.id_satuan', 'keranjang_masuk.id AS id', 
+                'barang.id AS id_barang', 'barang.nama', 'barang.harga', 'keranjang_masuk.id AS id', 
                 'keranjang_masuk.qty AS qty_barang_masuk', 'keranjang_masuk.subtotal'
             ])
             ->where('keranjang_masuk.id_user', $this->id_user)
@@ -272,8 +271,7 @@ class Cartin extends MY_Controller
 
             $this->cartin->table = 'barang_masuk_detail';
             $data['list_barang'] = $this->cartin->select([
-                    'barang_masuk_detail.qty', 'barang_masuk_detail.subtotal',
-                    'barang.id_satuan', 'barang.nama', 'barang.harga',
+                    'barang_masuk_detail.qty', 'barang_masuk_detail.subtotal', 'barang.nama', 'barang.harga',
                 ])
                 ->join('barang')
                 ->where('barang_masuk_detail.id_barang_masuk', $id_barang_masuk)

@@ -25,7 +25,7 @@ class User extends MY_Controller
 
         $id = $this->session->userdata('id_user');
         
-        $data['title']              = 'Easy WMS - Profile';
+        $data['title']              = 'La Seul Plus - Profile';
         $data['breadcrumb_title']   = 'Profile';
         $data['breadcrumb_path']    = 'Profile';
         $data['content']            = $this->user->where('id', $id)->first();

@@ -28,7 +28,7 @@ class Inputs extends MY_Controller
         $this->session->unset_userdata('keyword');
         $this->session->unset_userdata('time');
         
-        $data['title']              = 'Easy WMS - List Barang Masuk';
+        $data['title']              = 'La Seul Plus - List Barang Masuk';
         $data['breadcrumb_title']   = 'List Barang Masuk';
         $data['breadcrumb_path']    = 'Barang Masuk / List Barang Masuk';
         $data['content']            = $this->inputs->select([

@@ -46,7 +46,6 @@
                                     </td>
                                     <td class="text-center">
                                         <?= $barang->qty ?>
-                                        <small><?= ucfirst(getUnitName($barang->id_satuan)) ?></small>
                                     </td>
                                 </tr>
                             <?php endforeach ?>

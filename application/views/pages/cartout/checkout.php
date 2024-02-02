@@ -43,8 +43,7 @@
                             <?php foreach ($list_barang as $barang) : ?>
                                 <tr>
                                     <td>
-                                        <strong><?= $barang->nama ?></strong> / 
-                                        <small><?= ucfirst(getUnitName($barang->id_satuan)) ?></small>
+                                        <strong><?= $barang->nama ?></strong>
                                     </td>
                                     <td class="text-center"><?= $barang->qty ?></td>
                                 </tr>

@@ -10,25 +10,25 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">List Pengeluaran Barang</h4>
+                        <h4 class="text-lg font-medium text-gray-900 dark:text-black">List Pengeluaran Barang</h4>
                     </div>
-                    <div class="table-responsive">
-                        <table class="table no-wrap v-middle mb-0">
-                            <thead>
-                                <tr class="border-0">
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">ID Pengeluaran</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2">Nama Staff</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted px-2 text-center">Waktu Pengeluaran</th>
-                                    <th class="border-0 font-14 font-weight-medium text-muted"></th>
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">ID Pengeluaran</th>
+                                    <th scope="col" class="px-6 py-3">Nama Staff</th>
+                                    <th scope="col" class="px-6 py-3">Waktu Pengeluaran</th>
+                                    <th scope="col" class="px-6 py-3"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php foreach ($content as $row) : ?>
-                                    <tr>
-                                        <td class="border-top-0 px-2 py-4 font-weight-medium"><?= $row->id ?></td>
-                                        <td class="border-top-0 text-muted px-2 py-4 font-14"><?= $row->nama ?></td>
-                                        <td class="border-top-0 text-muted px-2 py-4 font-14 text-center"><?= date('d-m-Y H:i:s', strtotime($row->waktu)) ?></td>
-                                        <td class="border-top-0 text-center text-muted px-2 py-4">
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                        <td class="px-6 py-4"><?= $row->id ?></td>
+                                        <td class="px-6 py-4"><?= $row->nama ?></td>
+                                        <td class="px-6 py-4"><?= date('d-m-Y H:i:s', strtotime($row->waktu)) ?></td>
+                                        <td class="px-6 py-4">
                                             <a href="<?= base_url("outputs/detail/$row->id") ?>" class="btn btn-primary btn-rounded"><i data-feather="shopping-cart"></i>&nbsp;&nbsp;Detail</a>
                                         </td>
                                     </tr>

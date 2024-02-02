@@ -24,7 +24,7 @@ class Users extends MY_Controller
     {
         $this->session->unset_userdata('keyword');
         
-        $data['title']              = 'Easy WMS - List Staff';
+        $data['title']              = 'La Seul Plus - List Staff';
         $data['breadcrumb_title']   = 'List Staff';
         $data['breadcrumb_path']    = 'Manajemen Staff / List Staff';
         $data['content']            = $this->users->paginate($page)->get();

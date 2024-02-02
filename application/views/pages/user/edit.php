@@ -23,7 +23,7 @@
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="nama"><i class="fas fa-user"></i></label>
                                                     </div>
-                                                    <?= form_input('nama', $input->nama, ['class' => 'form-control', 'required' => true, 'placeholder' => 'Bukan nama panggilan']) ?>
+                                                    <?= form_input('nama', $input->nama, ['class' => 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light', 'required' => true, 'placeholder' => 'Bukan nama panggilan']) ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -45,7 +45,7 @@
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="email"><i class="fas fa-at"></i></label>
                                                     </div>
-                                                    <?= form_input(['type' => 'email', 'name' => 'email', 'value' => $input->email, 'class' => 'form-control', 'placeholder' => 'Masukan alamat email aktif', 'required' => true]) ?>
+                                                    <?= form_input(['type' => 'email', 'name' => 'email', 'value' => $input->email, 'class' => 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light', 'placeholder' => 'Masukan alamat email aktif', 'required' => true]) ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="password"><i class="fas fa-key"></i></label>
                                                     </div>
-                                                    <?= form_password('password', '', ['class' => 'form-control', 'placeholder' => 'Password minimal 4 karakter']) ?>
+                                                    <?= form_password('password', '', ['class' => 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light', 'placeholder' => 'Password minimal 4 karakter']) ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +89,7 @@
                                                     <div class="input-group-prepend">
                                                         <label class="input-group-text" for="telefon"><i class="fas fa-phone"></i></label>
                                                     </div>
-                                                    <?= form_input('telefon', $input->telefon, ['class' => 'form-control', 'placeholder' => 'Masukan nomor telefon aktif', 'required' => true]) ?>
+                                                    <?= form_input('telefon', $input->telefon, ['class' => 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light', 'placeholder' => 'Masukan nomor telefon aktif', 'required' => true]) ?>
                                                 </div>
                                             </div>
                                         </div>

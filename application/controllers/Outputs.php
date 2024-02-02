@@ -122,7 +122,7 @@ class Outputs extends MY_Controller
 
     public function detail($id_barang_keluar)
     {
-        $data['title']              = 'Easy WMS - List Barang Keluar';
+        $data['title']              = 'La Seul Plus - List Barang Keluar';
         $data['breadcrumb_title']   = 'List Barang Keluar';
         $data['breadcrumb_path']    = "Barang Keluar / List Barang Keluar / Detail / $id_barang_keluar";
         $data['page']               = 'pages/outputs/detail';
@@ -138,7 +138,7 @@ class Outputs extends MY_Controller
 
         $this->outputs->table = 'barang_keluar_detail';
         $data['list_barang'] = $this->outputs->select([
-                'barang_keluar_detail.qty', 'barang.id_satuan', 'barang.nama', 'barang.harga',
+                'barang_keluar_detail.qty', 'barang.nama', 'barang.harga',
             ])
             ->join('barang')
             ->where('barang_keluar_detail.id_barang_keluar', $id_barang_keluar)

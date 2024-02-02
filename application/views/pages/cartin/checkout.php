@@ -8,56 +8,58 @@
                 <div class="card-header bg-success text-white">
                     Pemasukan Barang Selesai
                 </div>
-                <div class="card-body">
-                    <table class="table-responsive mb-3 no-wrap">
-                        <tr>
-                            <td>Nomor pemasukan</td>
-                            <td>:</td>
-                            <td><?= $barang_masuk->id_barang_masuk ?></td>
+                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <td class="px-6 py-4">Nomor pemasukan</td>
+                            <td class="px-6 py-4">:</td>
+                            <td class="px-6 py-4"><?= $barang_masuk->id_barang_masuk ?></td>
                         </tr>
-                        <tr>
-                            <td>NIP Staff</td>
-                            <td>:</td>
-                            <td><?= $barang_masuk->id_user ?></td>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <td class="px-6 py-4">NIP Staff</td>
+                            <td class="px-6 py-4">:</td>
+                            <td class="px-6 py-4"><?= $barang_masuk->id_user ?></td>
                         </tr>
-                        <tr>
-                            <td>Nama Staff</td>
-                            <td>:</td>
-                            <td><?= $barang_masuk->nama ?></td>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <td class="px-6 py-4">Nama Staff</td>
+                            <td class="px-6 py-4">:</td>
+                            <td class="px-6 py-4"><?= $barang_masuk->nama ?></td>
                         </tr>
-                        <tr>
-                            <td>Waktu</td>
-                            <td>:</td>
-                            <td><?= date('d/m/Y H:i:s', strtotime($barang_masuk->waktu)) ?></td>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <td class="px-6 py-4">Waktu</td>
+                            <td class="px-6 py-4">:</td>
+                            <td class="px-6 py-4"><?= date('d/m/Y H:i:s', strtotime($barang_masuk->waktu)) ?></td>
                         </tr>
                     </table>
-                    <p>Stok barang berhasil ditambahkan 😊</p>
-                    <table class="table table-responsive w-100 d-block d-md-table">
-                        <thead>
-                            <tr>
-                                <th>Barang</th>
-                                <th class="text-center">Harga</th>
-                                <th class="text-center">Jumlah</th>
-                                <th class="text-center">Subtotal</th>
+                    <p class="text-lg font-medium text-gray-900 dark:text-white">Stok barang berhasil ditambahkan 😊</p>
+                    
+                </div>
+                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="col" class="px-6 py-3">Barang</th>
+                                <th scope="col" class="px-6 py-3">Harga</th>
+                                <th scope="col" class="px-6 py-3">Jumlah</th>
+                                <th scope="col" class="px-6 py-3">Subtotal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($list_barang as $barang) : ?>
-                                <tr>
-                                    <td>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <td td class="px-6 py-4">
                                         <strong><?= $barang->nama ?></strong>
                                     </td>
-                                    <td class="text-center">
-                                        Rp.<?= number_format($barang->harga, 0, ',', '.') ?>,- / 
-                                        <small><?= ucfirst(getUnitName($barang->id_satuan)) ?></small>
+                                    <td td class="px-6 py-4">
+                                        Rp.<?= number_format($barang->harga, 0, ',', '.') ?>,- /pcs
                                     </td>
-                                    <td class="text-center"><?= $barang->qty ?></td>
-                                    <td class="text-center">Rp.<?= number_format($barang->subtotal, 0, ',', '.') ?>,-</td>
+                                    <td td class="px-6 py-4"><?= $barang->qty ?></td>
+                                    <td td class="px-6 py-4">Rp.<?= number_format($barang->subtotal, 0, ',', '.') ?>,-</td>
                                 </tr>
                             <?php endforeach ?>
                             <tr>
-                                <td colspan="3"><strong>Total:</strong></td>
-                                <td class="text-center"><strong>Rp.<?= number_format(array_sum(array_column($list_barang, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
+                                <td td class="px-6 py-4"><strong>Total:</strong></td>
+                                <td td class="px-6 py-4"><strong>Rp.<?= number_format(array_sum(array_column($list_barang, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -66,7 +68,7 @@
                 <div class="card-footer bg-white">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 mb-2">
-                            <a href="<?= base_url('items') ?>" class="btn btn-primary btn-rounded text-white"><i class="fas fa-angle-left"></i> List barang</a>
+                            <a href="<?= base_url('items') ?>" class="text-lg font-medium text-gray-900 dark:text-black"><i class="fas fa-angle-left"></i> List barang</a>
                         </div>
                         <div class="col-md-6 col-sm-12 mb-2">
                             <button class="btn btn-success btn-rounded float-right" onclick="printDiv('printBukti')">Cetak Bukti <i class="fas fa-angle-right"></i></button>

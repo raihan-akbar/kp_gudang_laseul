@@ -24,7 +24,7 @@ class Suppliers extends MY_Controller
     {
         $this->session->unset_userdata('keyword');
 
-        $data['title']              = 'Easy WMS - List Supplier';
+        $data['title']              = 'La Seul Plus - List Supplier';
         $data['breadcrumb_title']   = 'List Supplier';
         $data['breadcrumb_path']    = 'Manajemen Supplier / List Supplier';
         $data['content']            = $this->suppliers->paginate($page)->get();
