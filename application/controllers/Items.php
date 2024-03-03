@@ -26,7 +26,7 @@ class Items extends MY_Controller
 
         $data['title']              = 'La Seul Plus - List Barang';
         $data['breadcrumb_title']   = "List Barang";
-        $data['breadcrumb_path']    = 'Pendataan Barang / List Barang';
+        $data['breadcrumb_path']    = 'Barang / List Barang';
         $data['content']            = $this->items->select([
                 'barang.id AS id_barang', 'barang.nama AS nama_barang', 'qty', 'harga',
                 'supplier.nama AS nama_supplier'
@@ -52,7 +52,7 @@ class Items extends MY_Controller
     {
         $this->session->unset_userdata('keyword');
 
-        $data['title']              = 'Easy WMS - List Barang';
+        $data['title']              = 'La Seul Plus - List Barang';
         $data['breadcrumb_title']   = "List Barang";
         $data['breadcrumb_path']    = 'Pendataan Barang / Ketersediaan / ' . ucfirst($param);
         $data['page']               = 'pages/items/index';
@@ -101,7 +101,7 @@ class Items extends MY_Controller
             redirect(base_url('items'));
         }
 
-        $data['title']              = 'Easy WMS - List Barang';
+        $data['title']              = 'La Seul Plus - List Barang';
         $data['breadcrumb_title']   = "List Barang";
         $data['breadcrumb_path']    = "Pendataan Barang / Search / $keyword";
         $data['content'] = $this->items->select([

@@ -8,7 +8,7 @@
                <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
             </svg>
          </button>
-        <a href="https://flowbite.com" class="flex ms-2 md:me-24 invisible sm:visible">
+        <a href="<?= base_url('home') ?>" class="flex ms-2 md:me-24 invisible sm:visible">
           <img src="<?=base_url('assets/images/Horizontal-FFF.png') ?>" class="h-8 me-3 px-16" alt="FlowBite Logo" />
           <!-- <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">La Seul</span> -->
         </a>
@@ -36,13 +36,7 @@
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
-                </li>
-                <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                  <a href="<?= base_url('logout') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
                 </li>
               </ul>
             </div>
@@ -70,7 +64,7 @@
          <!-- <div class="py-2"></div> -->
          <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-         <?php if ($this->session->userdata('role') == 'admin') : ?>
+         
          <li>
             <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-barang" data-collapse-toggle="dropdown-barang">
                   <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
@@ -99,8 +93,7 @@
                     </a>
                   </li>
             </ul>
-         </li>
-        <?php endif ?>
+         </li> 
 
          <li>
             <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-supplier" data-collapse-toggle="dropdown-supplier">
@@ -120,7 +113,7 @@
                        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5.757v8.486M5.757 10h8.486M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                      </svg>
-                       <span class="ms-3">Tambah</span>
+                       <span class="ms-3">Register</span>
                     </a>
                   </li>
             <?php endif ?>
@@ -141,13 +134,12 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 1v11m0 0 4-4m-4 4L4 8m11 4v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3"/>
                      </svg>
 
-                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Masuk</span>
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Barang Masuk</span>
                   <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                   </svg>
             </button>
             <ul id="dropdown-masuk" class="hidden py-2 space-y-2">
-            <?php if ($this->session->userdata('role') == 'admin') : ?>
                   <li>
                      <a href="<?= base_url('cartin') ?>" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-8 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
@@ -158,7 +150,6 @@
                        <span class="ms-3">Keranjang</span>
                     </a>
                   </li>
-            <?php endif ?>
                   <li>
                      <a href="<?= base_url('inputs') ?>" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-8 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
@@ -176,13 +167,12 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12V1m0 0L4 5m4-4 4 4m3 5v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3"/>
                      </svg>
 
-                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Keluar</span>
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Barang Keluar</span>
                   <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                   </svg>
             </button>
             <ul id="dropdown-keluar" class="hidden py-2 space-y-2">
-            <?php if ($this->session->userdata('role') == 'admin') : ?>
                   <li>
                      <a href="<?= base_url('cartout') ?>" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-8 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
@@ -192,7 +182,6 @@
                        <span class="ms-3">Keranjang</span>
                     </a>
                   </li>
-            <?php endif ?>
                   <li>
                      <a href="<?= base_url('outputs') ?>" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-8 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">

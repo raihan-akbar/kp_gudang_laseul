@@ -4,14 +4,12 @@
 <div class="container-fluid"> 
     
     <?php $this->load->view('layouts/_alert') ?>
-    
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <h4 class="text-lg font-medium text-gray-900 dark:text-black">List Karyawan</h4>
-                    </div>
+    <div class="lg:columns-1  md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti">
+    <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-2">
+        <div class="w-full mb-2">
+            <h2 class="text-xl font-semibold">List Karyawan</h2>
+        </div>
+        <div class="card-body">
                     <div class="relative overflow-x-auto">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -103,7 +101,6 @@
                 <?php endif ?>
             </div>
         </div>
-    </div>
 </div>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->

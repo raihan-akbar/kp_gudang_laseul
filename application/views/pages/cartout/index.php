@@ -4,29 +4,28 @@
 <div class="container-fluid">
     
     <?php $this->load->view('layouts/_alert') ?>
-    
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mb-3">
-                <div class="card-header bg-primary text-white">
-                    Keranjang Pengeluaran Barang
-                </div>
-                <div class="card-body">
-                    <table class="table table-responsive w-100 d-block d-md-table">
-                        <thead>
+    <div class="lg:columns-1  md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti">
+    <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-2">
+        <div class="w-full mb-2">
+            <h2 class="text-xl font-semibold">Keranjang Pengeluaran Barang</h2>
+        </div>
+        <div class="card-body">
+                <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th>Barang</th>
-                                <th class="text-center">Jumlah</th>
+                                <th scope="col" class="px-6 py-3">Barang</th>
+                                <th scope="col" class="px-6 py-3">Jumlah</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($content as $row) : ?>
-                                <tr>
-                                    <td>
-                                        <strong><?= $row->nama ?></strong> / 
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <td class="px-6 py-4">
+                                        <strong><?= $row->nama ?></strong>
                                     </td>
-                                    <td>
+                                    <td class="px-6 py-4">
                                         <form action="<?= base_url('cartout/update') ?>" method="POST">
                                             <input type="hidden" name="id" value="<?= $row->id ?>">
                                             <input type="hidden" name="id_barang" value="<?= $row->id_barang ?>">
@@ -39,7 +38,7 @@
                                             <small class="text-danger mt-1"><?= $this->session->flashdata("qty_cartout_$row->id") ?></small>
                                         </form>
                                     </td>
-                                    <td>
+                                    <td class="px-6 py-4">
                                         <form action="<?= base_url('cartout/delete') ?>" method="POST">
                                             <input type="hidden" name="id" value="<?= $row->id ?>">
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i></button>
@@ -50,22 +49,20 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-footer bg-white">
-                    <div class="row">
+                <br>
                         <div class="col-md-4 col-sm-12 mb-2">
-                            <a href="<?= base_url('items') ?>" class="btn btn-warning btn-rounded text-white"><i class="fas fa-angle-left"></i> List barang</a>
-                        </div>
-                        <div class="col-md-4 col-sm-12 mb-2 d-flex justify-content-center">
                             <form action="<?= base_url('cartout/drop') ?>" method="POST">
                                 <input type="hidden" name="id_pesanan" value="">
-                                <button type="submit" class="btn btn-danger btn-rounded text-white"><i class="fas fa-trash"></i> Kosongkan keranjang</button>
+                                <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+                              </svg>Kosongkan keranjang
+                                </button>
                             </form>
+                            <button type="button" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800"><a href="<?= base_url('cartout/checkout') ?>">Checkout</a></button>
+                            
                         </div>
-                        <div class="col-md-4 col-sm-12 mb-2">
-                            <a href="<?= base_url('cartout/checkout') ?>" class="btn btn-success btn-rounded float-right">Checkout <i class="fas fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                  
             </div>
         </div>
     </div>

@@ -4,14 +4,13 @@
 <div class="container-fluid">
 
     <?php $this->load->view('layouts/_alert') ?> 
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="text-lg font-medium text-gray-900 dark:text-black">Tambah Karyawan</h4>
-                    <br>
-                    <form action="<?= base_url('register') ?>" method="POST">
+    <div class="lg:columns-1 md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti">
+    <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-2">
+        <div class="w-full mb-2">
+            <h2 class="text-xl font-semibold">Tambah Karyawan</h2>
+        </div>
+        <div class="card-body">
+            <form action="<?= base_url('register') ?>" method="POST">
                         <div class="form-body">
                             <div class="form-group">
                                 <div class="row">
@@ -131,11 +130,10 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
         </div>
     </div>
-</div>
+    </div>
+    
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->

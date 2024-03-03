@@ -65,7 +65,7 @@ class User extends MY_Controller
         }
 
         if (!$this->user->validate()) {
-            $data['title']              = 'Easy WMS - Edit Profile';
+            $data['title']              = 'La Seul Plus - Edit Profile';
             $data['page']               = 'pages/user/edit';
             $data['breadcrumb_title']   = 'Edit Profile';
             $data['breadcrumb_path']    = "Profile / Edit Profile / " . $data['input']->nama;

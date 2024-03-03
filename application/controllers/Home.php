@@ -25,7 +25,7 @@ class Home extends MY_Controller
         $nama = $this->session->userdata('nama');
 
         $data['title']              = 'La Seul Plus - Dashboard';
-        $data['breadcrumb_title']   = "Hallo $nama 😊";
+        $data['breadcrumb_title']   = "Hallo $nama";
         $data['breadcrumb_path']    = 'Home / Dashboard';
         $data['barang_masuk']       = $this->home->select([
                                         'barang_masuk.id', 'user.nama', 

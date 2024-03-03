@@ -153,10 +153,6 @@
                             <i data-feather="user" class="svg-icon mr-2 ml-1"></i>My Profile
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="<?= base_url("user/edit/" . $this->session->userdata('id_user')) ?>">
-                            <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>Account Setting
-                        </a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= base_url('logout') ?>">
                             <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Logout
                         </a>

@@ -28,7 +28,7 @@ class Outputs extends MY_Controller
         $this->session->unset_userdata('keyword');
         $this->session->unset_userdata('time');
         
-        $data['title']              = 'Easy WMS - List Barang Keluar';
+        $data['title']              = 'La Seul Plus - List Barang Keluar';
         $data['breadcrumb_title']   = 'List Barang Keluar';
         $data['breadcrumb_path']    = 'Barang Keluar / List Barang Keluar';
         $data['content']            = $this->outputs->select([
@@ -62,7 +62,7 @@ class Outputs extends MY_Controller
             redirect(base_url('outputs'));
         }
 
-        $data['title']              = 'Easy WMS - List Barang Keluar';
+        $data['title']              = 'La Seul Plus - List Barang Keluar';
         $data['breadcrumb_title']   = 'List Barang Keluar';
         $data['breadcrumb_path']    = "Barang Keluar / List Barang Keluar / Cari / $keyword";
         $data['content']            = $this->outputs->select([
@@ -100,7 +100,7 @@ class Outputs extends MY_Controller
             redirect(base_url('outputs'));
         }
 
-        $data['title']              = 'Easy WMS - List Barang Keluar';
+        $data['title']              = 'La Seul Plus - List Barang Keluar';
         $data['breadcrumb_title']   = 'List Barang Keluar';
         $data['breadcrumb_path']    = "Barang Keluar / List Barang Keluar / Filter / $time";
         $data['content']            = $this->outputs->select([

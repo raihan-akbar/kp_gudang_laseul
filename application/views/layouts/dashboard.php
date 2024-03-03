@@ -93,15 +93,15 @@
         </div>
         <nav class="mt-2 -mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
           <div class="px-5 py-2">
-            <p class="text-base text-gray-500"> Raihan Muhammad Akbar </p>
-          </div>
-
-          <div class="px-5 py-2">
             <p class="text-base text-gray-500"> Fabio Pamungkas Syechan </p>
           </div>
 
           <div class="px-5 py-2">
-            <p class="text-base text-gray-500"> Dejan Soekri Stankovic </p>
+            <p class="text-base text-gray-500"> Raihan Muhammad Akbar </p>
+          </div>
+
+          <div class="px-5 py-2">
+            <p class="text-base text-gray-500"> Jendra Kamal Yuda Kusumah </p>
           </div>
         </nav>
         <p class="mt-2 text-center text-base text-gray-400">Sangkuriang Labs &copy; <?=date('Y') ?> S-Labs, Inc. All rights reserved.</p>
@@ -127,9 +127,16 @@
             var originalContents = document.body.innerHTML;
 
             document.body.innerHTML = printContents;
-
+            // Menyembunyikan button sebelum mencetak
+            var buttonToHide = document.getElementById('print'); // Ganti 'buttonId' dengan id aktual button
+            if (buttonToHide) {
+                buttonToHide.style.display = 'none';
+            }
             window.print();
-
+            // Menampilkan kembali button setelah mencetak
+            if (buttonToHide) {
+                buttonToHide.style.display = '';
+            }
             document.body.innerHTML = originalContents;
         }
     </script>

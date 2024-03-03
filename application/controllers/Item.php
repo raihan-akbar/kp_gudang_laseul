@@ -22,11 +22,6 @@ class Item extends MY_Controller
 
     public function index()
     {
-        if ($this->session->userdata('role') != 'admin') { 
-            $this->session->set_flashdata('warning', 'Anda tidak memiliki akses');
-            redirect(base_url('home'));
-            return;
-        }
 
         if (!$_POST) {
             $input = (object) $this->item->getDefaultValues();
@@ -39,7 +34,7 @@ class Item extends MY_Controller
             $data['input'] = $input;
             $data['page']  = 'pages/item/index';
             $data['breadcrumb_title'] = 'Register Barang';
-            $data['breadcrumb_path']  = 'Barang Masuk / Register Barang';
+            $data['breadcrumb_path']  = 'Barang / Register Barang';
 
             return $this->view($data);
         }
