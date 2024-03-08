@@ -18,6 +18,39 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Tambahkan link ke jQuery dan jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script>
+    <script>
+        // Inisialisasi Datepicker pada elemen dengan ID 'tanggal_awal' dan 'tanggal_akhir'
+        $("#tanggal_awal, #tanggal_akhir").datepicker({
+            dateFormat: 'yy-mm-dd',
+            changeMonth: true,
+            changeYear: true
+        });
+
+        // Tambahkan penanganan acara pada tombol "Tampilkan Laporan"
+        $("#printOutput").on("click", function () {
+            // Dapatkan nilai tanggal awal dan akhir
+            var tanggalAwal = $("#tanggal_awal").val();
+            var tanggalAkhir = $("#tanggal_akhir").val();
+
+            // Tampilkan nilai pada konsol untuk memeriksa
+            console.log("Tanggal Awal: ", tanggalAwal);
+            console.log("Tanggal Akhir: ", tanggalAkhir);
+
+            // ... Lanjutkan dengan tindakan lain sesuai kebutuhan ...
+
+            // Set nilai tanggal pada input setelah menampilkan laporan
+            $("#tanggal_awal").val(tanggalAwal);
+            $("#tanggal_akhir").val(tanggalAkhir);
+        });
+
+    </script>
+
 </head>
 
 <body class="bg-white antialiased h-full w-full">
@@ -137,6 +170,55 @@
             if (buttonToHide) {
                 buttonToHide.style.display = '';
             }
+            document.body.innerHTML = originalContents;
+        }
+        function printOutput() {
+            var tanggalAwal = document.getElementById("tanggal_awal").value;
+            var tanggalAkhir = document.getElementById("tanggal_akhir").value;
+
+            // Validasi bahwa kedua tanggal telah dipilih
+            if (!tanggalAwal || !tanggalAkhir) {
+                alert("Silakan pilih tanggal awal dan tanggal akhir terlebih dahulu.");
+                return;
+            }
+
+            var printContents = document.getElementById("printBukti").innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            // Tambahkan informasi tanggal ke dalam konten cetakan
+            var tanggalInfo = document.getElementById("tanggalInfo");
+            tanggalInfo.innerHTML = `Tanggal Awal: ${tanggalAwal}<br>Tanggal Akhir: ${tanggalAkhir}`;
+
+            // Menyembunyikan button sebelum mencetak
+            var buttonToHide = document.getElementById('printout');
+            var buttonToHide2 = document.getElementById('printout2');
+            var buttonToHide3 = document.getElementById('tanggalawalakhir');
+            if (buttonToHide) {
+                buttonToHide.style.display = 'none';
+            }
+            if (buttonToHide2) {
+                buttonToHide2.style.display = 'none';
+            }
+            if (buttonToHide3) {
+                buttonToHide3.style.display = 'none';
+            }
+            // Lakukan proses pencetakan
+            window.print();
+            if (buttonToHide) {
+                buttonToHide.style.display = '';
+            }
+            if (buttonToHide2) {
+                buttonToHide2.style.display = '';
+            }
+            if (buttonToHide3) {
+                buttonToHide3.style.display = '';
+            }
+            // Hapus informasi tanggal setelah pencetakan selesai
+            tanggalInfo.innerHTML = '';
+
+            // Kembalikan konten asli setelah pencetakan selesai
             document.body.innerHTML = originalContents;
         }
     </script>

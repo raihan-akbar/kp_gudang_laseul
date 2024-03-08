@@ -21,6 +21,7 @@ class Inputs extends MY_Controller
             redirect(base_url('login'));
             return;
         }
+        $this->load->model('Inputs_model');
     }
 
     public function index($page = null)
@@ -144,6 +145,25 @@ class Inputs extends MY_Controller
             ->where('barang_masuk_detail.id_barang_masuk', $id_barang_masuk)
             ->get();
 
+        $this->view($data);
+    }
+
+    public function laporan_masuk() {
+        $data['title']              = 'La Seul Plus - Laporan Masuk';
+        $data['breadcrumb_title']   = "Laporan Masuk";
+        $data['breadcrumb_path']    = "Barang Masuk / Laporan";
+        $data['page']               = 'pages/inputs/laporan_masuk';
+
+        // Proses form input dari pengguna untuk tanggal awal dan akhir
+        $tanggal_awal = $this->input->post('tanggal_awal');
+        $tanggal_akhir = $this->input->post('tanggal_akhir');
+        
+        // Validasi tanggal jika diperlukan
+        
+        // Ambil data mutasi barang masuk dari rentang tanggal tertentu dari model
+        $data['laporan'] = $this->Inputs_model->laporan_masuk($tanggal_awal, $tanggal_akhir);
+        
+        // Tampilkan view mutasi barang masuk
         $this->view($data);
     }
 }
