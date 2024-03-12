@@ -21,6 +21,7 @@ class Outputs extends MY_Controller
             redirect(base_url('login'));
             return;
         }
+        $this->load->model('Outputs_model');
     }
 
     public function index($page = null)
@@ -144,6 +145,24 @@ class Outputs extends MY_Controller
             ->where('barang_keluar_detail.id_barang_keluar', $id_barang_keluar)
             ->get();
 
+        $this->view($data);
+    }
+    public function laporan_keluar() {
+        $data['title']              = 'La Seul Plus - Laporan Keluar';
+        $data['breadcrumb_title']   = "Laporan Keluar";
+        $data['breadcrumb_path']    = "Barang Keluar / Laporan";
+        $data['page']               = 'pages/outputs/laporan_keluar';
+
+        // Proses form input dari pengguna untuk tanggal awal dan akhir
+        $tanggal_awal = $this->input->post('tanggal_awal');
+        $tanggal_akhir = $this->input->post('tanggal_akhir');
+        
+        // Validasi tanggal jika diperlukan
+        
+        // Ambil data mutasi barang keluar dari rentang tanggal tertentu dari model
+        $data['laporan'] = $this->Outputs_model->laporan_keluar($tanggal_awal, $tanggal_akhir);
+        
+        // Tampilkan view mutasi barang keluar
         $this->view($data);
     }
 }

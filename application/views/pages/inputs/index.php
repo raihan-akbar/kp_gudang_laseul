@@ -55,7 +55,12 @@
                 <?php else : ?>
                     <div class="row d-flex justify-content-center">
                         <nav aria-label="Page navigation example">
-                            <?= $pagination ?>
+                            <ul class="inline-flex -space-x-px text-sm">
+                                <li>
+                                 <?= $pagination ?>
+                                </li>
+                            </ul>
+                            
                         </nav>
                     </div>
                 <?php endif ?>

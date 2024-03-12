@@ -29,8 +29,23 @@
                                 <?php foreach ($content as $row) : ?>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td class="px-6 py-4"><?= $row->nama ?></td>
-                                        <td class="px-6 py-4"><?= $row->email ?></td>
-                                        <td class="px-6 py-4"><?= $row->telefon ?></td>
+                                        <td class="px-6 py-4">
+                                            <?= $row->email ?> 
+                                            <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="javascript:void(0);" onclick="openEmailCompose('<?= $row->email ?>')">Kirim Email
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <?php
+                                                $nomorTelepon = $row->telefon;
+
+                                                // Tambahkan kode negara jika nomor telepon dimulai dengan "08..."
+                                                if (strpos($nomorTelepon, '08') === 0) {
+                                                    $nomorTelepon = '+62' . substr($nomorTelepon, 1);
+                                                }
+                                            ?>
+                                            <a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="whatsapp://send?phone=<?= $nomorTelepon ?>"><?= $nomorTelepon ?></a>
+                                            
+                                        </td>
                                         <td class="px-6 py-4"><?= $row->alamat ?></td>
                                         <td class="px-6 py-4">
                                             <?php if ($row->status == 'aktif') : ?>
@@ -79,7 +94,14 @@
             </div>
         </div>
     </div>
+<script>
+function openEmailCompose(email) {
+    var subject = encodeURIComponent("Permintaan Stok Barang");
+    var body = encodeURIComponent("Selamat Siang/Sore\nKami dari bagian Gudang La Seul Plus Skincare.\nNama Barang :\nStok Barang yang diminta :");
 
+    window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+}
+</script>
 <!-- ============================================================== -->
 <!-- End Container fluid  -->
 <!-- ============================================================== -->

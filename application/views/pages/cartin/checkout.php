@@ -1,7 +1,7 @@
 <div class="container-fluid">
     
     <?php $this->load->view('layouts/_alert') ?>
-    <div class="lg:columns-1  md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti">
+    <div class="lg:columns-1  md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti"> 
     <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-2">
         <div class="w-full mb-2">
             <h2 class="text-xl font-semibold">Pemasukan Barang Selesai</h2>
@@ -30,7 +30,7 @@
                             <td class="px-6 py-4"><?= date('d/m/Y H:i:s', strtotime($barang_masuk->waktu)) ?></td>
                         </tr>
                     </table>
-                    <p class="text-lg font-medium text-gray-900 dark:text-white">Stok barang berhasil ditambahkan 😊</p>
+                    <p class="text-lg font-medium text-gray-900 dark:text-white">Stok barang berhasil ditambahkan</p>
                     
                 </div>
                 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -46,19 +46,19 @@
                         <tbody>
                             <?php foreach ($list_barang as $barang) : ?>
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <td td class="px-6 py-4">
+                                    <td class="px-6 py-4">
                                         <strong><?= $barang->nama ?></strong>
                                     </td>
-                                    <td td class="px-6 py-4">
+                                    <td class="px-6 py-4">
                                         Rp.<?= number_format($barang->harga, 0, ',', '.') ?>,- /pcs
                                     </td>
-                                    <td td class="px-6 py-4"><?= $barang->qty ?></td>
-                                    <td td class="px-6 py-4">Rp.<?= number_format($barang->subtotal, 0, ',', '.') ?>,-</td>
+                                    <td class="px-6 py-4"><?= $barang->qty ?></td>
+                                    <td class="px-6 py-4">Rp.<?= number_format($barang->subtotal, 0, ',', '.') ?>,-</td>
                                 </tr>
                             <?php endforeach ?>
                             <tr>
-                                <td td class="px-6 py-4"><strong>Total:</strong></td>
-                                <td td class="px-6 py-4"><strong>Rp.<?= number_format(array_sum(array_column($list_barang, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
+                                <td class="px-6 py-4"><strong>Total:</strong></td>
+                                <td class="px-6 py-4"><strong>Rp.<?= number_format(array_sum(array_column($list_barang, 'subtotal')), 0, ',', '.') ?>,-</strong></td>
                                 <td></td>
                             </tr>
                         </tbody>

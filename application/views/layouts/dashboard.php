@@ -39,8 +39,8 @@
             var tanggalAkhir = $("#tanggal_akhir").val();
 
             // Tampilkan nilai pada konsol untuk memeriksa
-            console.log("Tanggal Awal: ", tanggalAwal);
-            console.log("Tanggal Akhir: ", tanggalAkhir);
+            console.log("Dari Tanggal: ", tanggalAwal);
+            console.log("Hingga Tanggal: ", tanggalAkhir);
 
             // ... Lanjutkan dengan tindakan lain sesuai kebutuhan ...
 
@@ -189,7 +189,7 @@
 
             // Tambahkan informasi tanggal ke dalam konten cetakan
             var tanggalInfo = document.getElementById("tanggalInfo");
-            tanggalInfo.innerHTML = `Tanggal Awal: ${tanggalAwal}<br>Tanggal Akhir: ${tanggalAkhir}`;
+            tanggalInfo.innerHTML = `Dari Tanggal: ${tanggalAwal}<br>Hingga Tanggal: ${tanggalAkhir}`;
 
             // Menyembunyikan button sebelum mencetak
             var buttonToHide = document.getElementById('printout');

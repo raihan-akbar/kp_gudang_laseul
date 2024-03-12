@@ -199,6 +199,14 @@
                        <span class="ms-3">Catatan</span>
                     </a>
                   </li>
+                  <li>
+                     <a href="<?= base_url('outputs/laporan_keluar') ?>" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-8 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5h8m-1-3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1m6 0v3H6V2m6 0h4a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4m0 9.464 2.025 1.965L12 9.571"/>
+                        </svg>
+                       <span class="ms-3">Laporan Keluar</span>
+                    </a>
+                  </li>
             </ul>
          </li>
          <li>
