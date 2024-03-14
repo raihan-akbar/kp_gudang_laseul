@@ -149,6 +149,18 @@ class Inputs extends MY_Controller
     }
 
     public function laporan_masuk() {
+        $tgl_awal = $this->input->post('tanggal_awal');
+        $tgl_akhir = $this->input->post('tanggal_akhir');
+
+        if ($tgl_awal && $tgl_akhir != null) {
+            $data_session = array(
+                'tgl_awal' => $tgl_awal,
+                'tgl_akhir' => $tgl_akhir
+            );
+
+            $this->session->set_userdata($data_session);
+        }
+
         $data['title']              = 'La Seul Plus - Laporan Masuk';
         $data['breadcrumb_title']   = "Laporan Masuk";
         $data['breadcrumb_path']    = "Barang Masuk / Laporan";

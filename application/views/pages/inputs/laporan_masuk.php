@@ -8,16 +8,34 @@
             <h2 class="text-xl font-semibold">Laporan Barang Masuk</h2>
         </div>
 
+
+<?php 
+    if ($this->session->userdata('tgl_awal')==null) {
+        $tgl_awal=null;
+    }
+    else {
+        $tgl_awal=$this->session->userdata('tgl_awal');
+    }
+
+    if ($this->session->userdata('tgl_akhir')==null) {
+        $tgl_akhir=null;
+    }
+    else {
+        $tgl_akhir=$this->session->userdata('tgl_akhir');
+    }
+?>
+
+
         <div class="lg:columns-1  md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti">
         <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-2">
         <div class="card-body">
         <form method="post" action="<?php echo base_url('Inputs/laporan_masuk'); ?>">
             <div id="tanggalawalakhir">
             <label for="tanggal_awal">Tanggal Awal:</label>
-            <input type="date" id="tanggal_awal" name="tanggal_awal" required>
+            <input value="<?=$tgl_awal?>" type="date" id="tanggal_awal" name="tanggal_awal" required>
 
             <label for="tanggal_akhir">Tanggal Akhir:</label>
-            <input type="date" id="tanggal_akhir" name="tanggal_akhir" required>
+            <input value="<?=$tgl_awal?>" type="date" id="tanggal_akhir" name="tanggal_akhir" required>
             </div>
             <br> 
 
