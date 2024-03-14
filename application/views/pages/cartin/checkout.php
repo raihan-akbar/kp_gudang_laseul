@@ -67,10 +67,14 @@
                 <div class="card-footer bg-white">
                     <div class="row">
                         <div class="col-md-6 col-sm-12 mb-2">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+                            </svg>
+
                             <a href="<?= base_url('items') ?>" class="text-lg font-medium text-gray-900 dark:text-black"><i class="fas fa-angle-left"></i> List barang</a>
                         </div>
                         <div class="col-md-6 col-sm-12 mb-2">
-                            <button class="btn btn-success btn-rounded float-right" onclick="printDiv('printBukti')">Cetak Bukti <i class="fas fa-angle-right"></i></button>
+                            <button class="text-lg font-medium text-gray-900 dark:text-black" onclick="printDiv('printBukti')">Cetak Bukti <i class="fas fa-angle-right"></i></button>
                         </div>
                     </div>
                 </div>

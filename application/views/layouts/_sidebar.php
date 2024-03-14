@@ -19,7 +19,7 @@
               <button type="button" class="flex text-sm bg-gray-800 rounded-full" aria-expanded="false" data-dropdown-toggle="dropdown-user">
                 <span class="sr-only">Open user menu</span>
                 <p class="flex me-1 self-center text-xl font-semibold whitespace-nowrap dark:text-white disabled">
-                  <span class="bg-gray-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-900 dark:text-blue-300 uppercase"><?= $this->session->userdata('role') ?></span>
+                  <span class="bg-gray-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-900 dark:text-blue-300 uppercase"><?= $this->session->userdata('nama') ?> / <?= $this->session->userdata('role') ?></span>
                 </p>
                 <img class="w-10 h-10 rounded-full bg-gray-700" src="<?=base_url('assets/images/ava_test.png') ?>" alt="user photo">
               </button>
@@ -33,7 +33,7 @@
               </div>
               <ul class="py-1" role="none">
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                  <a href="<?= base_url('home') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
                 </li>
                 <li>
                   <a href="<?= base_url('logout') ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>

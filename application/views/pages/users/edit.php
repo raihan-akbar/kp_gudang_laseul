@@ -5,11 +5,12 @@
 
     <?php $this->load->view('layouts/_alert') ?>
 
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
+    <div class="lg:columns-1  md:columns-6 sm:columns-1 xs:1 gap-2 mb-2" id="printBukti">
+    <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow mb-2">
+        <div class="w-full mb-2">
+            <h2 class="text-xl font-semibold">Formulir Edit Data <?= $input->nama ?></h2>
+        </div>
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Formulir Edit Data <?= $input->nama ?></h4>
                     <form action="<?= base_url("users/edit/$input->id") ?>" method="POST">
                         <?= form_hidden('id', $input->id) ?>
                         <div class="form-body">
@@ -166,7 +167,7 @@
                         </div>
                         <div class="form-actions">
                             <div class="text-right">
-                                <button type="submit" class="btn btn-info">Update</button>
+                                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
                                 <a href="<?= base_url('users') ?>" class="btn btn-dark">Cancel</a>
                             </div>
                         </div>
