@@ -158,7 +158,8 @@ class Inputs extends MY_Controller
                 'tgl_akhir' => $tgl_akhir
             );
 
-            $this->session->set_userdata($data_session);
+            $this->session->set_flashdata('tgl_awal',$tgl_awal);
+            $this->session->set_flashdata('tgl_akhir',$tgl_akhir);
         }
 
         $data['title']              = 'La Seul Plus - Laporan Masuk';

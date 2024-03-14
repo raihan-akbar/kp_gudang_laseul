@@ -14,14 +14,14 @@
         $tgl_awal=null;
     }
     else {
-        $tgl_awal=$this->session->userdata('tgl_awal');
+        $tgl_awal=$this->session->flashdata('tgl_awal');
     }
 
     if ($this->session->userdata('tgl_akhir')==null) {
         $tgl_akhir=null;
     }
     else {
-        $tgl_akhir=$this->session->userdata('tgl_akhir');
+        $tgl_akhir=$this->session->flashdata('tgl_akhir');
     }
 ?>
 
